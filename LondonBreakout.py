@@ -1,5 +1,3 @@
-# coding: utf-8
-
 # In[1]:
 
 #this is to London, the greatest city in the world
@@ -28,7 +26,6 @@
 #just a simple prediction of london fx market based on tokyo market
 #but the code of london breakout is extremely time consuming
 #first, we need to get one minute frequency dataset for backtest
-#i would recommend this website
 # http://www.histdata.com/download-free-forex-data/?/excel/1-minute-bar-quotes
 #we can get as many as free datasets of various currency pairs we want
 #before our backtesting, we should cleanse the raw data
@@ -42,7 +39,6 @@
 #daylight saving time is another story
 #what a stupid idea it is
 import os
-os.chdir('d:/')
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -100,8 +96,6 @@ def signal_generation(df,method):
     #this is the core part
     #the time complexity for this part is extremely high
     #as there are too many constraints
-    #if u have a better idea to optimize it
-    #plz let me know
 
     for i in range(len(signals)):
         
@@ -278,9 +272,6 @@ def main():
     new=new['%s'%date]
 
     plot(new)
-
-#how to calculate stats could be found from my other code called Heikin-Ashi
-# https://github.com/je-suis-tm/quant-trading/blob/master/heikin%20ashi%20backtest.py
 
 if __name__ == '__main__':
     main()
