@@ -7,7 +7,6 @@
 #normally i read stuff on trading view wiki
 #its not like i work there and try to promote it
 #trading view wiki is a very detailed encyclopedia for different indicators
-#plz refer to the following link for more details
 # https://www.tradingview.com/wiki/Relative_Strength_Index_(RSI)
 
 #on trading view wiki, there are a couple of strategies to use rsi
@@ -38,7 +37,6 @@ import yfinance as yf
 # In[2]:
 
 #smoothed moving average
-#for details plz refer to wikipedia
 # https://en.wikipedia.org/wiki/Moving_average#Modified_moving_average
 def smma(series,n):
     
@@ -140,14 +138,12 @@ def plot(new,ticker):
 #unlike double bottom pattern for bollinger bands
 #this is head-shoulder pattern directly on rsi instead of price
 #well, it is actually named head and shoulders
-#but i refused to do free marketing for the shampoo
+#but I refused to do free marketing for the shampoo
 #cuz that shampoo doesnt work at all!
 #the details of head-shoulder pattern could be found in this link
 # https://www.investopedia.com/terms/h/head-shoulders.asp
 
 #any way, this pattern recognition is similar to the one in bollinger bands
-#plz refer to bollinger bands for a detailed explanation
-# https://github.com/je-suis-tm/quant-trading/blob/master/Bollinger%20Bands%20Pattern%20Recognition%20backtest.py
 def pattern_recognition(df,method,lag=14):
     
     df['rsi']=0.0
@@ -191,8 +187,6 @@ def pattern_recognition(df,method,lag=14):
     exit_days=5
     
     #signal generation
-    #plz refer to the following link for pattern visualization
-    # https://github.com/je-suis-tm/quant-trading/blob/master/preview/rsi%20head-shoulder%20pattern.png
     #the idea is to start with the first node i
     #we look backwards and find the head node j with maximum value in pattern finding period
     #between node i and node j, we find a node k with its value almost the same as node i
@@ -381,9 +375,6 @@ def main():
 
     plot(new,ticker)
 
-
-#how to calculate stats could be found from my other code called Heikin-Ashi
-# https://github.com/je-suis-tm/quant-trading/blob/master/heikin%20ashi%20backtest.py
 
 if __name__ == '__main__':
     main()
