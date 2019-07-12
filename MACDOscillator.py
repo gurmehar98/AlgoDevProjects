@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb  6 11:57:46 2018
-
-@author: Administrator
-"""
-
 # In[1]:
 
 #need to get fix yahoo finance package first
@@ -131,11 +124,6 @@ def main():
     new=signal_generation(df,macd)
     new=new[slicer:]
     plot(new, ticker)
-
-
-#how to calculate stats could be found from my other code called Heikin-Ashi
-# https://github.com/je-suis-tm/quant-trading/blob/master/heikin%20ashi%20backtest.py
-
 
 if __name__ == '__main__':
     main()
