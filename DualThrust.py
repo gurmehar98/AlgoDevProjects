@@ -1,34 +1,15 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Mar 19 15:22:38 2018
-@author: Administrator
-
-"""
-# In[1]:
-
 #dual thrust is an opening range breakout strategy
 #it is very similar to London Breakout
-#please check London Breakout if u have any questions
-# https://github.com/je-suis-tm/quant-trading/blob/master/London%20Breakout%20backtest.py
 #Initially we set up upper and lower thresholds based on previous days open, close, high and low 
 #When the market opens and the price exceeds thresholds, we would take long/short positions prior to upper/lower thresholds 
 #However, there is no stop long/short position in this strategy
 #We clear all positions at the end of the day
-#rules of dual thrust can be found in the following link
 # https://www.quantconnect.com/tutorials/dual-thrust-trading-algorithm/
 
 import os
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-
-# In[2]:
-
-#os.chdir('D:/')
-
-
-# In[3]:
-
 
 #data frequency convertion from minute to intra daily
 #as we are doing backtesting, we have already got all the datasets we need
@@ -199,15 +180,8 @@ def plot(signals,intraday,column):
     plt.grid(True)
     plt.show()
 
-
-
-# In[4]:
 def main():
-    
-    #similar to London Breakout
-    #my raw data comes from the same website
     # http://www.histdata.com/download-free-forex-data/?/excel/1-minute-bar-quotes
-    #just take the mid price of whatever currency pair you want
 
     df=pd.read_csv('gbpusd.csv')
     df.set_index(pd.to_datetime(df['date']),inplace=True)
@@ -226,9 +200,6 @@ def main():
     intraday=min2day(df,column,year,month,rg)
     signals=signal_generation(df,intraday,param,column,rg)
     plot(signals,intraday,column)
-
-#how to calculate stats could be found from my other code called Heikin-Ashi
-# https://github.com/je-suis-tm/quant-trading/blob/master/heikin%20ashi%20backtest.py
 
 if __name__ == '__main__':
     main()
